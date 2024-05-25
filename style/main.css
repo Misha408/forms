@@ -1,0 +1,611 @@
+.ripple-button {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Стиль для псевдоелемента, який створює ефект ripple */
+.ripple-button::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.3s, opacity 0.3s;
+  pointer-events: none;
+}
+
+/* Ефект ripple при натисканні */
+.ripple-button:active::after {
+  transform: scale(30);
+  opacity: 0;
+}
+
+/* Оновлення фону при активації */
+.ripple-button:active {
+  background-color: #000;
+}
+
+.ripple-button-gray {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+}
+
+/* Стиль для псевдоелемента, який створює ефект ripple */
+
+
+
+
+
+:root {
+  --primary-color: #abd0aa;
+  --secondary-color: #fff;
+  --border-color: #000;
+  --modal-background-color: #f8f8f8;
+  --hover-color: rgba(0, 0, 0, .5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h2,
+h3 {
+  margin: 0;
+}
+
+body {
+  background-color: #000;
+}
+
+.container {
+  padding-top: 100px;
+  border: 1px;
+  margin: 0 auto;
+}
+
+.progress__bar {
+  display: flex;
+  height: 45px;
+}
+
+.progress__section {
+  display: flex;
+  align-items: center;
+  height: 45px;
+  background-color: var(--secondary-color);
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.progress__section-active {
+  background-color: #f5f1f0;
+  ;
+}
+
+.progress__section-confirmed {
+  background-color: var(--primary-color);
+}
+
+@media (max-width: 970px) {
+  .progress__section {
+    display: flex;
+    align-items: center;
+    height: 45px;
+    position: relative;
+    padding-left: 60px;
+    border-radius: 25px 0 0 25px;
+  }
+
+  .progress__section:not(.progress__section-confirmed):not(.progress__section-active) {
+    background-color: var(--secondary-color);
+  }
+}
+
+.progress__modal__number__btn__wrap {
+  position: relative;
+}
+
+.progress__modal__number__btn__wrap::before {
+  content: attr(data-number);
+  /* Використовуємо значення атрибута data-number для контенту ::before */
+  position: absolute;
+  top: -20px;
+  /* Відступ зверху */
+  text-align: center;
+  /* Центруємо текст по горизонталі */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.progress__section.col-lg-3 {
+  padding-right: 0;
+}
+
+@media (min-width: 970px) {
+  .progress__section:last-child {
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+  }
+}
+
+.progress__icon,
+.progress__icon__big,
+.progress__icon-peoples {
+  width: 24px;
+  height: 24px;
+}
+
+.progress__icon-wrap {
+  position: absolute;
+  left: -30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 100%;
+  background: var(--secondary-color);
+  border: 1px var(--border-color) solid;
+}
+
+@media (max-width: 970px) {
+  .progress__icon-wrap {
+    width: 45px;
+    height: 45px;
+    left: 0;
+  }
+}
+
+.modal__icon {
+  position: static;
+}
+
+.progress__title {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  letter-spacing: .03125em;
+  font-family: "Roboto", sans-serif;
+}
+
+.progress__subtitle {
+  font-size: .875rem;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+}
+
+.progress__modal {
+  top: calc(100% + 10px);
+  width: 100%;
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: var(--modal-background-color);
+  padding: 10px;
+  z-index: 3;
+  cursor: auto;
+}
+
+.check__modal {
+  width: 650px;
+  display: none;
+}
+
+
+@media (max-width: 970px) {
+
+  .progress__modal,
+  .check__modal {
+    width: calc(100% - 25px);
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--modal-background-color);
+    padding: 10px;
+    z-index: 1;
+  }
+}
+
+.active,
+.show {
+  display: block;
+}
+
+.progress__modal__students {
+  width: 270px;
+}
+
+.progress__modal__check {
+  width: 290px;
+}
+
+.progress__modal__guests {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.progress__modal__title {
+  font-size: 0.9rem;
+  letter-spacing: .05em;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 10px;
+}
+
+.wrap {
+  width: 100%;
+  padding-right: 15px;
+  outline: 0;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  user-select: none;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.wrap:last-child {
+  padding-right: 0;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.progress__list__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 20px;
+}
+
+.progress__list {
+  font-size: 1rem;
+  letter-spacing: .05em;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  transition: color .3s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress__list:hover {
+  color: var(--primary-color)
+}
+
+.progress__modal__button__wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress__modal__button {
+  width: 73px;
+  height: 40px;
+  background-color: var(--primary-color);
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  border: none;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  user-select: none;
+}
+
+.button-right {
+  margin-left: auto;
+}
+
+.progress__modal__numbers {
+  display: flex;
+  position: relative;
+  padding: 20px;
+  gap: 10px;
+}
+
+.progress__modal__number__btn {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border-color);
+  background-color: var(--secondary-color);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background-color 0.3;
+}
+
+.progress__modal__number__btn::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  background: var(--primary-color);
+  opacity: 0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.3s, opacity 1s;
+}
+
+/* Ефект ripple при натисканні */
+.progress__modal__number__btn::after {
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 1;
+  transition: none;
+}
+
+/* Ефект ripple після натискання */
+.progress__modal__number__btn:active::after {
+  transform: translate(-50%, -50%) scale(10);
+  opacity: 0;
+  transition: transform 0.3s, opacity 1s;
+}
+
+.progress__modal__number__btn::before {
+  content: attr(data-number);
+  position: absolute;
+  top: -25px;
+  left: 5px;
+}
+
+.selected {
+  background-color: #abd0aa;
+}
+
+.number__btn__active {
+  background-color: var(--primary-color);
+}
+
+.progress__modal__date {
+  padding: 12px;
+  height: 345px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.progress__modal__date__text {
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.progress__modal__wrap {
+  margin-left: 0;
+  position: relative;
+}
+
+.progress__modal__text {
+  font-size: .75rem !important;
+}
+
+.check__modal__wrap {
+  height: 345px;
+}
+
+@media (max-width: 970px) {
+  .v-card__text {
+    margin-left: 20px;
+    position: relative;
+    /* Додано для псевдоелементів */
+  }
+
+  .v-card__text::before {
+    content: '';
+    height: 100%;
+    width: 1px;
+    background-color: var(--primary-color);
+    position: absolute;
+    left: -10px;
+  }
+}
+
+.progress__students__content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.progress__student {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  padding: 5px;
+  background-color: var(--secondary-color);
+  border: none;
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.375rem;
+  letter-spacing: .0071428571em;
+  display: flex;
+  overflow: hidden;
+}
+
+@media (max-width: 970px) {
+  .progress__student {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    padding: 5px;
+    background-color: var(--secondary-color);
+    border: none;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.375rem;
+    letter-spacing: .0071428571em;
+    transition: background-color 0.3s;
+    outline: 0;
+    overflow: hidden;
+    display: inline-block;
+    user-select: none;
+  }
+}
+
+.progress__student::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: rgba(0, 0, 0, .5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 1;
+}
+
+.progress__check__wrap {
+  max-height: 264px;
+  gap: 10px;
+}
+
+.progress__check__btn {
+  max-width: 90px;
+  background-color: #f5f1f0;
+  text-align: center;
+  padding: 8px;
+  border: none;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  user-select: none;
+  height: auto;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+
+.progress__check__btn__title {
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+.progress__check__btn__subtitle {
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+}
+
+.ripple {
+  background-color: rgba(0, 0, 0, .5);
+  position: absolute;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  width: 10px;
+  height: 10px;
+  opacity: 0.8;
+  animation: ripple-effect 0.3s ease-out forwards;
+}
+
+@keyframes ripple-effect {
+  to {
+    width: 200%;
+    height: 600%;
+    opacity: 0;
+  }
+}
+
+.shine-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(115deg,
+      transparent,
+      #FFF,
+      transparent);
+  transform: rotate(90deg);
+  /*градус ефекту shine */
+  opacity: 0;
+  filter: blur(20px);
+  /* Додаємо розмитість */
+}
+
+.progress__modal__number__btn.shine-btn::before {
+  filter: blur(4px);
+  background: linear-gradient(90deg, transparent, #5a5a5a, transparent);
+  transform: rotate(-70deg);
+  height: 3px;
+}
+
+.progress__modal__number__btn.shine-btn:hover::before {
+  border: 3px;
+  animation: shine2 3s ease-in-out infinite;
+}
+
+@keyframes shine2 {
+  0% {
+    opacity: 0;
+    left: -150%;
+    top: -150%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0);
+    /* Розмитість на початку та в кінці */
+  }
+
+  50% {
+    opacity: 1;
+    left: 50%;
+    top: 80%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    /* Розмитість на середині */
+  }
+
+  60% {
+    opacity: 0;
+    /* Повна прозорість */
+    left: 150%;
+    top: 150%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0);
+    /* Розмитість на початку та в кінці */
+  }
+}
+
+.shine-btn:hover::before {
+  animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% {
+    opacity: 0;
+    left: -150%;
+    top: -150%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0);
+    /* Розмитість на початку та в кінці */
+  }
+
+  50% {
+    opacity: 1;
+    left: 50%;
+    top: 50%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.100);
+    /* Розмитість на середині */
+  }
+
+  60% {
+    opacity: 0;
+    /* Повна прозорість */
+    left: 150%;
+    top: 150%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0);
+    /* Розмитість на початку та в кінці */
+  }
+}

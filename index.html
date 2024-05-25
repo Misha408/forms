@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style/bootstrap.min.css">
+  <link rel="stylesheet" href="./style/main.css">
+
+</head>
+
+<body>
+  <section>
+    <div class="container">
+      <div class="progress__bar d-xs-block d-flex flex-wrap">
+        <div class="progress__section col-12 col-lg-3 ">
+          <div class="progress__icon-wrap">
+            <img class="progress__icon" src="./icons/pin.svg" alt="pin">
+          </div>
+          <div class="wrap shine-btn">
+            <div class="progress__wrap">
+              <h2 class="progress__title">Buchungsart</h2>
+              <h3 class="progress__subtitle booking">Wählen die art der Buchung</h3>
+            </div>
+          </div>
+
+          <div class="progress__modal active" id="1">
+            <div class="progress__modal__wrap">
+              <div class="progress__list__wrap">
+                <li class="progress__list ti-btn next"> Stundenweise </li>
+                <li class="progress__list ti-btn next"> Übernacht </li>
+                <li class="progress__list ti-btn next"> Ganttag </li>
+                <button class="progress__modal__button button-right next ti-btn shine-btn">Weiter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="progress__section col-12 col-lg-3" data-target="guests">
+          <div class="progress__icon-wrap">
+            <img class="progress__icon" src="./icons/people.svg" alt="pin">
+          </div>
+          <div class="wrap shine-btn">
+            <div class="progress__wrap">
+              <h2 class="progress__title">Gäste</h2>
+              <h3 class="progress__subtitle guest">Anzahl der Gäste?</h3>
+            </div>
+          </div>
+
+          <div class="progress__modal" id="2">
+
+            <div class="progress__modal__wrap">
+              <div class="progress__modal__guests">
+                <div class="progress__icon-wrap modal__icon">
+                  <img class="progress__icon-peoples" src="./icons/people.svg" alt="pin">
+                </div>
+                <div class="progress__modal__numbers">
+                  <div class="progress__modal__number__btn__wrap" data-number="1">
+                    <button class="progress__modal__number__btn next shine-btn ripple-button "></button>
+                  </div>
+                  <div class="progress__modal__number__btn__wrap" data-number="2">
+                    <button class="progress__modal__number__btn next ripple-button shine-btn"></button>
+                  </div>
+                  <div class="progress__modal__number__btn__wrap" data-number="3">
+                    <button class="progress__modal__number__btn next ripple-button shine-btn"></button>
+                  </div>
+                  <div class="progress__modal__number__btn__wrap " data-number="4">
+                    <button class="progress__modal__number__btn next ripple-button shine-btn"></button>
+                  </div>
+                </div>
+              </div>
+              <div class="progress__modal__button__wrap">
+                <button class="progress__modal__button prev ti-btn shine-btn">Zurück</button>
+                <button class="progress__modal__button next ti-btn shine-btn">Weiter</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="progress__section col-12 col-lg-3">
+          <div class="progress__icon-wrap">
+            <img class="progress__icon" src="./icons/time.svg" alt="pin">
+          </div>
+          <div class="wrap shine-btn">
+            <div class="progress__wrap">
+              <h2 class="progress__title">Dauer</h2>
+              <h3 class="progress__subtitle time">Wie lange wollt bleiben?</h3>
+            </div>
+          </div>
+
+          <div class="progress__modal" id="3">
+            <div class="progress__modal__wrap">
+              <div class="progress__students__content">
+                <button class="progress__student next ti-btn">
+                  <span class="progress__student__btn__title next">2 Studen</span>
+                </button>
+                <button class="progress__student next ti-btn">
+                  <span class="progress__student__btn__title next">3 Studen</span>
+                </button>
+                <button class="progress__student next ti-btn">
+                  <span class="progress__student__btn__title next">4 Studen</span>
+                </button>
+                <button class="progress__student next ti-btn">
+                  <span class="progress__student__btn__title next">5 Studen</span>
+                </button>
+                <button class="progress__student next ti-btn">
+                  <span class="progress__student__btn__title next">6 Studen</span>
+                </button>
+              </div>
+
+              <div class="progress__modal__button__wrap">
+                <button class="progress__modal__button prev ti-btn shine-btn ">Zurück</button>
+                <button class="progress__modal__button next ti-btn shine-btn">Weiter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="progress__section col-12 col-lg-3">
+          <div class="progress__icon-wrap">
+            <img class="progress__icon" src="./icons/calendar.svg" alt="pin">
+          </div>
+          <div class="wrap shine-btn">
+            <div class="progress__wrap">
+              <h2 class="progress__title">Check in</h2>
+              <h3 class="progress__subtitle check">Wie lange wollt bleiben?</h3>
+            </div>
+          </div>
+          <div class="progress__modal check__modal" id="4">
+            <div class="v-card__text">
+              <div class="row">
+                <div class="col col-12 col-md-6 col-lg-6">
+                  <div class="progress__modal__date ">
+                    <div class="row">
+                      <div class="progress__modal__date__text theme--light text-center mt-3 px-3 col">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"
+                          class="v-icon__svg" style="font-size: 16px; height: 16px; width: 16px; fill: #48cc80;">
+                          <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path>
+                        </svg>
+                        Verfügbar
+                      </div>
+                      <div class="progress__modal__date__text error--text text-center mt-3 px-3 col">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true"
+                          class="v-icon__svg" style="font-size: 16px; height: 16px; width: 16px; fill: #e55555;">
+                          <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path>
+                        </svg>
+                        Ausgebucht
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col col-12 col-md-6 col-lg-6">
+                  <div class="check__modal__wrap ">
+                    <div class="progress__modal__title">Folgende Startzeiten sind an deinem gewünschten Datum verfügbar:
+                    </div>
+                    <div class="progress__check__wrap d-flex flex-wrap overflow-auto">
+                      <button class="progress__check__btn  ti-btn">
+                        <span class="progress__check__btn__title">15:45 Uhr</span><br>
+                        <span class="progress__check__btn__subtitle">ab 27,15&nbsp;€*</span>
+                      </button>
+                      <button class="progress__check__btn  ti-btn">
+                        <span class="progress__check__btn__title">15:45 Uhr</span><br>
+                        <span class="progress__check__btn__subtitle">ab 27,15&nbsp;€*</span>
+                      </button>
+                      <button class="progress__check__btn  ti-btn">
+                        <span class="progress__check__btn__title">15:45 Uhr</span><br>
+                        <span class="progress__check__btn__subtitle">ab 27,15&nbsp;€*</span>
+                      </button>
+                      <button class="progress__check__btn  ti-btn">
+                        <span class="progress__check__btn__title">15:45 Uhr</span><br>
+                        <span class="progress__check__btn__subtitle">ab 27,15&nbsp;€*</span>
+                      </button>
+                      <button class="progress__check__btn  ti-btn">
+                        <span class="progress__check__btn__title">15:45 Uhr</span><br>
+                        <span class="progress__check__btn__subtitle">ab 27,15&nbsp;€*</span>
+                      </button>
+                      <button class="progress__check__btn  ti-btn">
+                        <span class="progress__check__btn__title">15:45 Uhr</span><br>
+                        <span class="progress__check__btn__subtitle">ab 27,15&nbsp;€*</span>
+                      </button>
+                      <button class="progress__check__btn  ti-btn">
+                        <span class="progress__check__btn__title">15:45 Uhr</span><br>
+                        <span class="progress__check__btn__subtitle">ab 27,15&nbsp;€*</span>
+                      </button>
+                      <button class="progress__check__btn  ti-btn">
+                        <span class="progress__check__btn__title">15:45 Uhr</span><br>
+                        <span class="progress__check__btn__subtitle">ab 27,15&nbsp;€*</span>
+                      </button>
+                      <button class="progress__check__btn  ti-btn">
+                        <span class="progress__check__btn__title">15:45 Uhr</span><br>
+                        <span class="progress__check__btn__subtitle">ab 27,15&nbsp;€*</span>
+                      </button>
+                      <button class="progress__check__btn  ti-btn">
+                        <span class="progress__check__btn__title">15:45 Uhr</span><br>
+                        <span class="progress__check__btn__subtitle">ab 27,15&nbsp;€*</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row progress__modal__button__wrap">
+                <div class="col">
+                  <button class=" progress__modal__button prev shine-btn ti-btn">Zurück</button>
+                </div>
+                <div class="col">
+                  <div class="row no-gutters">
+                    <div class="col align-self-center">
+                      <span class="progress__modal__text font-weight-light black--text d-sm-block">*Preis pro Person
+                        /
+                        Stunde</span>
+                    </div>
+                    <div class="col col-auto">
+                      <button class="col progress__modal__button check__modal__button ti-btn" disabled>Weiter</button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+  <script src="./script/main.js"></script>
+
+</body>
+
+</html>
